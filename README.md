@@ -1,5 +1,3 @@
-# Souepl_and_dragons_sk2
-
 <h1 align="center">Tajemná Škola a Deník Rebelů</h1>
 <p align="center">Vzrušující dobrodružná hra plná záhad zasazená do strašidelné školy.</p>
 <p align="center">6e 65 67 72</p>
