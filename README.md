@@ -4,7 +4,7 @@
 <p align="center">6e 69 67 67 65 72</p>
 
 <p align="center">
-  <img src="SOUE.png" alt="Logo hry" width="300">
+  <img src="SOUE.png" alt="Logo hry">
 </p>
 
 ## Přehled
