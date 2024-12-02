@@ -18,6 +18,11 @@ def caesar(text, posun_pro_caesar):
 def text_to_hex(text):
     hex_output = ' '.join(format(ord(c), 'x') for c in text)
     return hex_output
+
+def mission_print(počet):
+    global i
+    print(sifra_list[počet])
+    i=i+1 
  
 #----------CUSTOM INPUT PRO ŠIFRU----------
 final_text_šifry = input("Zadejte šifru: ")
@@ -27,6 +32,7 @@ posun_pro_caesar = len(final_text_šifry)
 caesar_šifra = caesar(final_text_šifry, posun_pro_caesar)
 hex = text_to_hex(final_text_šifry)
 special = text_to_hex(caesar_šifra)
+i = 0
  
  
 print(f"Původní text: {final_text_šifry}")
@@ -40,4 +46,7 @@ sifra_list = special.split()
 print(sifra_list)
 print(sifra_list[0])
 #------------------------------------------
- 
+mission_print(i)
+mission_print(i)
+mission_print(i)
+mission_print(i)
