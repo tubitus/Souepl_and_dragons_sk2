@@ -172,7 +172,7 @@ class TajemnaSkola:
         self.inventory.append("Elixír klidu")
         print("Elixír klidu byl přidán do vašeho inventáře.")
     
-    def vitkek_event(self):
+    def vitek_event(self):
         print("Potkali jste Vítka Fikrle, který vám nabízí léčbu.")
         print("Automaticky získáváte 10 zdraví.")
         self.health = min(self.health + 10, self.max_health)
