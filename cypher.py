@@ -1,7 +1,6 @@
 #----------KÓD PRO ŠIFRU----------
  
 def caesar(text, posun_pro_caesar):
-    abeceda = "aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž"
     result = ""
  
     for char in text:
@@ -21,10 +20,11 @@ def text_to_hex(text):
 
 def mission_print(počet):
     global i
-    if 
-        
+    if i<len(sifra_list):
         print(str(i+1) + ". část šifry je " + sifra_list[počet])  # Převod `i` na string
         i = i + 1  # Zvýšení hodnoty `i`
+    else:
+        print("NEMAM")
 
  
 #----------CUSTOM INPUT PRO ŠIFRU----------
@@ -32,6 +32,7 @@ final_text_šifry = input("Zadejte šifru: ")
 posun_pro_caesar = len(final_text_šifry)
 #------------------------------------------
  
+abeceda = "aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž"
 caesar_šifra = caesar(final_text_šifry, posun_pro_caesar)
 hex = text_to_hex(final_text_šifry)
 special = text_to_hex(caesar_šifra)
@@ -48,8 +49,14 @@ sifra_list = []
 sifra_list = special.split()
 print(sifra_list)
 print(sifra_list[0])
+print(len(sifra_list))
 #------------------------------------------
 mission_print(i)
 mission_print(i)
 mission_print(i)
 mission_print(i)
+mission_print(i)
+mission_print(i)
+mission_print(i)
+txt_to_defypher=input("Zadej text šifry: ")
+posun_po_ceasar_user=input("Zadej posun o kolik: ")
