@@ -13,9 +13,14 @@ def caesar_zpet_na_text():
 
 # Vstupní data
 abeceda = "aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž"
+decypher = "šimon"
 
 # Posunutí textu
 txt_to_defypher = input("Zadej text šifry: ")
 posun_po_ceasar_user = int(input("Zadej posun o kolik: "))  # Převod na int
 posunuty_text = caesar_zpet_na_text()
 print(f"Text po posunu o {posun_po_ceasar_user} zpátky: {posunuty_text}")
+if decypher==posunuty_text:
+    print("Správně si rozšifroval tajomnou")
+else:
+    print("Tvé rozluštění šifry bylo nezprávné, zkus to znovu.")

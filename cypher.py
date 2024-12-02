@@ -22,9 +22,11 @@ def mission_print(počet):
     global i
     if i<len(sifra_list):
         print(str(i+1) + ". část šifry je " + sifra_list[počet])  # Převod `i` na string
-        i = i + 1  # Zvýšení hodnoty `i`
+    elif i==len(sifra_list):
+        print("Veškeré části šifry, jenž jsi doposud postrádal máš nyní kompletní. Teď je jen na tobě, zda ji dokážeš rozšifrovat, či nikoli. Tázej se velkého Ceasara, zda ti poradí počet posunu. Tož byla moje rada, přeji hodně štěstí!")
     else:
         print("NEMAM")
+    i = i + 1  # Zvýšení hodnoty `i`
 
  
 #----------CUSTOM INPUT PRO ŠIFRU----------
@@ -58,5 +60,5 @@ mission_print(i)
 mission_print(i)
 mission_print(i)
 mission_print(i)
-txt_to_defypher=input("Zadej text šifry: ")
-posun_po_ceasar_user=input("Zadej posun o kolik: ")
+# txt_to_defypher=input("Zadej text šifry: ")
+# posun_po_ceasar_user=input("Zadej posun o kolik: ")
