@@ -3,6 +3,10 @@
 <p align="center">6e 65 67 72</p>
 <p align="center">6e 69 67 67 65 72</p>
 
+<p align="center">
+  <img src="SOUE.png" alt="Logo hry" width="300">
+</p>
+
 ## Přehled
 
 **Tajemná Škola a Deník Rebelů** je pohlcující dobrodružná hra plná záhad, která vás provede školou, jež je plná temných tajemství. Cílem je odhalit tajemství skrytého deníku, který má moc změnit vše. Procházejte pastmi, řešte hádanky a čelte nebezpečným bytostem, jak odhalujete pravdu.
