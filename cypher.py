@@ -21,8 +21,11 @@ def text_to_hex(text):
 
 def mission_print(počet):
     global i
-    print(sifra_list[počet])
-    i=i+1 
+    if 
+        
+        print(str(i+1) + ". část šifry je " + sifra_list[počet])  # Převod `i` na string
+        i = i + 1  # Zvýšení hodnoty `i`
+
  
 #----------CUSTOM INPUT PRO ŠIFRU----------
 final_text_šifry = input("Zadejte šifru: ")
