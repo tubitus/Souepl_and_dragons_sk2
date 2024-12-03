@@ -184,7 +184,7 @@ class TajemnaSkola:
         print("Elixír klidu je nyní ve vašem inventáři.")
     
     def vitek_event(self):
-        print("Potkali jste Víta Fikrle. Ví vám nabídne léčbu.")
+        print("Potkali jste Vítka Fikrle. Ví vám nabídne léčbu.")
         print("Pokud máte štěstí, dostanete léčbu zdarma. Jinak vás může zklamat.")
         gamble = input("Chcete se pokusit získat více zdraví? (ano/ne) > ")
         if gamble == "ano":
