@@ -60,5 +60,7 @@ mission_print(i)
 mission_print(i)
 mission_print(i)
 mission_print(i)
-# txt_to_defypher=input("Zadej text šifry: ")
-# posun_po_ceasar_user=input("Zadej posun o kolik: ")
+
+txt_to_defypher=input("Zadej text šifry: ")
+posun_po_ceasar_user=input("Zadej posun o kolik: ")
+
