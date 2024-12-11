@@ -44,24 +44,22 @@ quiz_questions = [
         "answer": "b"
     }
 ]
-def main_menu(self):
-    print("\n--- Hlavní menu ---")
-    print(f"Mise: {self.current_mission + 1}/8 | Zdraví: {self.health}")
-    print("1. Prozkoumat nové místo (spustit misi)")
-    print("2. Zkontrolovat inventář")
-    print("3. Ukončit hru")
-    choice = input("> ")
-    if choice == "1":
-        self.explore()
-    elif choice == "2":
-        self.check_inventory()
-    elif choice == "3":
-        print("Ukončili jste hru. Díky za hraní!")
-        exit()
-    else:
-        print("Neplatná volba, zkuste to znovu.")
+
 #----------KÓD PRO ŠIFRU----------
- 
+def caesar_zpet_na_text():
+    txt_to_defypher = input("Zadej text šifry: ")
+    posun_po_ceasar_user = int(input("Zadej posun o kolik: "))  # Převod na int
+    result = ""
+    for char in txt_to_defypher:
+        if char.lower() in abeceda:
+            is_upper = char.isupper()
+            idx = abeceda.index(char.lower())
+            new_idx = (idx - posun_po_ceasar_user) % len(abeceda)
+            new_char = abeceda[new_idx]
+            result += new_char.upper() if is_upper else new_char
+        else:
+            result += char  # Nezměněné znaky, které nejsou v abecedě
+    return result
 def caesar(text, posun_pro_caesar):
     result = ""
  
@@ -92,7 +90,7 @@ def mission_print(počet):
 
  
 #----------CUSTOM INPUT PRO ŠIFRU----------
-final_text_šifry = input("Zadejte šifru: ")
+final_text_šifry = "Alakazam"
 posun_pro_caesar = len(final_text_šifry)
 #------------------------------------------
  
@@ -101,8 +99,8 @@ caesar_šifra = caesar(final_text_šifry, posun_pro_caesar)
 hex = text_to_hex(final_text_šifry)
 special = text_to_hex(caesar_šifra)
 i = 0
- 
- 
+
+
 print(f"Původní text: {final_text_šifry}")
 print(f"Caesarova šifra (posun_pro_caesar {posun_pro_caesar}): {caesar_šifra}")
 print(f"Hex: {hex}")
@@ -119,8 +117,8 @@ print(len(sifra_list))
 #-------------Konec kódu na šifru------------
 class TajemnaSkola:
     def __init__(self):
-        self.health = 100
-        self.max_health = 100
+        self.health = 100000
+        self.max_health = 100000
         self.inventory = []
         self.journal_collected = False
         self.mission_items = [
@@ -137,7 +135,7 @@ class TajemnaSkola:
             "Jakub Kovařík", "Daniel Šedivec", "Šimík", "Ivan Gemela",
             "Temná Dáša", "Engineer", "Ježíš Breit", "Tlustý Malicherný Bok",
             "Mise: Získání medu", "Mise: Získání Elixíru klidu",
-            "Vítek Fikrle", "Tereza Lékařská", "Vědma Uzdravka", "Gabriel", "mise_s_otazkou"
+            "Vítek Fikrle", "Tereza Lékařská", "Vědma Uzdravka", "Gabriel"
         ]
         self.completed_events = set()
         self.current_mission = 0
@@ -172,12 +170,12 @@ class TajemnaSkola:
     def start(self):
         print("Vítejte v 'Tajemné škole a Deníku Rebelů'!")
         print("Vaším cílem je získat tajemný deník a odhalit pravdu o škole.")
-        print("Hra končí po 15 misích. Hodně štěstí!\n")
-        while not self.journal_collected and self.health > 0 and self.current_mission < 15:
+        print("Hra končí po8 misích. Hodně štěstí!\n")
+        while not self.journal_collected and self.health > 0 and self.current_mission <= 8:
             self.main_menu()
         if self.journal_collected:
             self.end_game()
-        elif self.current_mission >= 15:
+        elif self.current_mission >= 16:
             print("\nDosáhli jste patnácté mise, ale deník jste nezískali.")
             print("Škola zůstává zahalená tajemstvím. Konec hry.")
         else:
@@ -185,7 +183,7 @@ class TajemnaSkola:
 
     def main_menu(self):
         print("\n--- Hlavní menu ---")
-        print(f"Mise: {self.current_mission + 1}/15 | Zdraví: {self.health}")
+        print(f"Mise: {self.current_mission + 1}/16 | Zdraví: {self.health}")
         print("1. Prozkoumat nové místo")
         print("2. Zkontrolovat inventář")
         print("3. Použít předmět z inventáře")
@@ -216,46 +214,57 @@ class TajemnaSkola:
         
         if event == "Jakub Kovařík":
             self.jakub_event()
+            self.mise_s_otazkou()
         elif event == "Daniel Šedivec":
             self.daniel_event()
+            self.mise_s_otazkou()
         elif event == "Šimík":
             self.simik_event()
+            self.mise_s_otazkou()
         elif event == "Ivan Gemela":
             self.ivan_event()
+            self.mise_s_otazkou()
         elif event == "Temná Dáša":
             self.dasa_event()
+            self.mise_s_otazkou()
         elif event == "Engineer":
             self.engineer_event()
+            self.mise_s_otazkou()
         elif event == "Ježíš Breit":
             self.breit_event()
+            self.mise_s_otazkou()
         elif event == "Tlustý Malicherný Bok":
             self.bok_event()
+            self.mise_s_otazkou()
         elif event == "Mise: Získání medu":
             self.get_honey_mission()
+            self.mise_s_otazkou()
         elif event == "Mise: Získání Elixíru klidu":
             self.get_elixir_mission()
+            self.mise_s_otazkou()
         elif event == "Vítek Fikrle":
             self.vitek_event()
+            self.mise_s_otazkou()
         elif event == "Tereza Lékařská":
             self.tereza_event()
+            self.mise_s_otazkou()
         elif event == "Vědma Uzdravka":
             self.uzdravka_event()
+            self.mise_s_otazkou()
         elif event == "Gabriel":
             self.gabriel_event()
-        elif event == "mise_s_otazkou":
             self.mise_s_otazkou()
+
 
     def mise_s_otazkou(self):
         mission = self.mission_items[self.current_mission]
         question = self.remaining_questions.pop(random.randint(0, len(self.remaining_questions) - 1))
-        print(f"Mise: {self.current_mission + 1}")
-        print(f"\nMise {self.current_mission + 1} začíná!")
+        print(f"\nMise {self.current_mission} začíná!")
         if self.ask_question(question, mission["item"]):
-            self.current_mission += 1
+            print("")
         else:
             print("Nepodařilo se dokončit misi. Zkusíte to znovu!")
-
-    
+   
     def jakub_event(self):
         print("Potkali jste Jakuba Kovaříka. Musíte odpovědět na jeho hádanku.")
         question = "Kolik je 5 + 7?"
@@ -418,8 +427,16 @@ class TajemnaSkola:
             print("Vědma vás zradila a poškodil jste se. Ztrácíte 15 zdraví.")
             self.health -= 15
 
+
+    
     def end_game(self):
         print("\nGratulujeme! Našli jste Deník Rebelů.")
+        posunuty_text = caesar_zpet_na_text()
+        print(f"Text po posunu o {posun_pro_caesar} zpátky: {posunuty_text}")
+        if final_text_šifry==posunuty_text:
+            print("Správně si rozšifroval tajomnou")
+        else:
+            print("Tvé rozluštění šifry bylo nezprávné, zkus to znovu.")
         if random.random() < 0.5:  # 50% šance na nalezení deníku
             print("Deník se vám podařilo najít!")
             print("Co chcete udělat?")
@@ -438,7 +455,6 @@ class TajemnaSkola:
         else:
             print("Deník se vám nepodařilo najít.")
         print("Konec hry. Děkujeme za hraní!")
-        
 # Spuštění hry
 game = TajemnaSkola()
 game.start()

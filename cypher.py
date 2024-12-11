@@ -32,6 +32,7 @@ def mission_print(počet):
 #----------CUSTOM INPUT PRO ŠIFRU----------
 final_text_šifry = input("Zadejte šifru: ")
 posun_pro_caesar = len(final_text_šifry)
+decypher = final_text_šifry
 #------------------------------------------
  
 abeceda = "aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž"
