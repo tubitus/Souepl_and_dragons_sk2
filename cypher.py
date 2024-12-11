@@ -23,7 +23,7 @@ def mission_print(počet):
     if i<len(sifra_list):
         print(str(i+1) + ". část šifry je " + sifra_list[počet])  # Převod `i` na string
     elif i==len(sifra_list):
-        print("Veškeré části šifry, jenž jsi doposud postrádal máš nyní kompletní. Teď je jen na tobě, zda ji dokážeš rozšifrovat, či nikoli. Tázej se velkého Ceasara, zda ti poradí počet posunu. Tož byla moje rada, přeji hodně štěstí!")
+        print("Veškeré části šifry, jenž jsi doposud postrádal máš nyní kompletní. Teď je jen na tobě, zda ji dokážeš rozluštit, či nikoli. Tázej se velkého Ceasara, zda ti poradí počet posunu. Tož byla moje rada, přeji hodně štěstí!")
     else:
         print("NEMAM")
     i = i + 1  # Zvýšení hodnoty `i`
@@ -35,7 +35,7 @@ posun_pro_caesar = len(final_text_šifry)
 decypher = final_text_šifry
 #------------------------------------------
  
-abeceda = "aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž"
+abeceda = "abcdefghijklmnopqrstuvwxyz"
 caesar_šifra = caesar(final_text_šifry, posun_pro_caesar)
 hex = text_to_hex(final_text_šifry)
 special = text_to_hex(caesar_šifra)
